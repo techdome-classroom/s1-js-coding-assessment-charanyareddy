@@ -4,7 +4,7 @@ const decodeTheRing = function(s, p) {
 
   // Create a DP table with (m + 1) rows and (n + 1) columns
   let dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(false));
-  
+
   // Initial condition: empty message matches empty pattern
   dp[0][0] = true;
 
@@ -32,9 +32,4 @@ const decodeTheRing = function(s, p) {
   return dp[m][n];
 };
 
-// Test cases
-console.log(decodeTheRing("aa", "a")); // Output: false
-console.log(decodeTheRing("aa", "*")); // Output: true
-console.log(decodeTheRing("cb", "?a")); // Output: false
-console.log(decodeTheRing("abc", "a*c")); // Output: true
-console.log(decodeTheRing("hello", "h?llo")); // Output: true
+module.exports = decodeTheRing;
